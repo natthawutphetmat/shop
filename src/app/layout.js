@@ -45,16 +45,16 @@ export default function RootLayout({ children }) {
         <title>PG Phone Shop ผ่อนมือถือ เดอะมอลล์โคราช ชั้น 3 รับซื้อ ซ่อม เทิร์น มือถือ</title>
 
 
-        <Script
+         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16868993640"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`}
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-16868993640');
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}');
           `}
         </Script>
 
